@@ -1,6 +1,10 @@
-name: Post welcome comment
+name: Fight for you dreams or don't dream at all
 on:
   pull_request:
     types: [opened]
 permissions:
   pull-requests: write
+jobs:
+  build:
+    name: Fight for you dreams or don't dream at all
+    runs-on: ubuntu-latest
