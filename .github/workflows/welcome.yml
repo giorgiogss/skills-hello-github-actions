@@ -1,6 +1,15 @@
-name: Post welcome comment
+name: Fight for you dreams or don't dream at all
 on:
   pull_request:
     types: [opened]
 permissions:
   pull-requests: write
+jobs:
+  build:
+    name: Fight for you dreams or don't dream at all
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr comment $PR_URL --body "Welcome to Gigi's repository!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
